@@ -11,7 +11,7 @@ spec:
     path: app2
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: default
   syncPolicy:
     automated:
       prune: true

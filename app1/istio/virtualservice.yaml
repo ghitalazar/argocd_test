@@ -10,6 +10,6 @@ spec:
   http:
   - route:
     - destination:
-        host: app1
+        host: app1.default.svc.cluster.local
         port:
           number: 80
