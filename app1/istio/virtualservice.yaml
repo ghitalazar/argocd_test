@@ -5,12 +5,17 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - \"*\"
+    - "*"
   gateways:
-  - app1-gateway
+    - istio-ingress
   http:
-  - route:
-    - destination:
-        host: app1.default.svc.cluster.local
-        port:
-          number: 80
+    - match:
+        - uri:
+            prefix: /app1
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: app1.default.svc.cluster.local
+            port:
+              number: 80
