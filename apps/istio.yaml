@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: istio-base
-    targetRevision: 1.22.0
+    targetRevision: 1.26.1
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
@@ -29,7 +29,7 @@ spec:
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: istiod
-    targetRevision: 1.22.0
+    targetRevision: 1.26.1
     helm:
       values: |
         global:
@@ -53,7 +53,7 @@ spec:
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: gateway
-    targetRevision: 1.22.0
+    targetRevision: 1.26.1
     helm:
       parameters:
         - name: name
