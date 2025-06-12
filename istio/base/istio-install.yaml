@@ -1,5 +1,0 @@
-# Placeholder - replace with actual Istio install if using Helm
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: istio-system
