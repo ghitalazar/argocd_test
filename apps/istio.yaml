@@ -1,7 +1,8 @@
+# Istio base (CRDs, etc.)
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istio-base
   namespace: argocd
 spec:
   project: default
@@ -9,8 +10,6 @@ spec:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: istio-base
     targetRevision: 1.22.0
-    helm:
-      releaseName: istio-base
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
@@ -19,19 +18,22 @@ spec:
       prune: true
       selfHeal: true
 ---
+# Istiod control plane
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-ingress
+  name: istiod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
-    chart: istio-ingress
+    chart: istiod
     targetRevision: 1.22.0
     helm:
-      releaseName: istio-ingress
+      values: |
+        global:
+          istioNamespace: istio-system
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
@@ -39,4 +41,29 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
+---
+# Gateway (Ingress Gateway)
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-ingressgateway
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://istio-release.storage.googleapis.com/charts
+    chart: gateway
+    targetRevision: 1.22.0
+    helm:
+      parameters:
+        - name: name
+          value: istio-ingressgateway
+        - name: service.type
+          value: ClusterIP
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
