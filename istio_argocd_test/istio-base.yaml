@@ -6,12 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:ghitalazar/argocd_test.git
-    targetRevision: HEAD
-    path: istio_argocd_test
+    repoURL: https://istio-release.storage.googleapis.com/charts
     chart: base
-    helm:
-      valueFiles: []
+    targetRevision: 1.22.0
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
