@@ -9,7 +9,6 @@ spec:
     repoURL: https://github.com/ghitalazar/argocd_test.git
     targetRevision: main
     path: istio_charts/charts/istio-control/istio-discovery
-    chart: istiod
     helm:
       parameters:
         - name: global.istioNamespace

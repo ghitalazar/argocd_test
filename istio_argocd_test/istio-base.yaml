@@ -7,7 +7,6 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ghitalazar/argocd_test.git
-    chart: base
     targetRevision: main
     path: istio_charts/charts/base
   destination:

@@ -9,7 +9,6 @@ spec:
     repoURL: https://github.com/ghitalazar/argocd_test.git
     targetRevision: main
     path: istio_charts/charts/gateway
-    chart: gateway
     helm:
       parameters:
         - name: gateways.istio-ingressgateway.type
