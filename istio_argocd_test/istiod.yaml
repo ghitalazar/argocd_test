@@ -6,9 +6,10 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://istio-release.storage.googleapis.com/charts
+    repoURL: https://github.com/ghitalazar/argocd_test.git
+    targetRevision: main
+    path: istio_charts/charts/istio-control/istio-discovery
     chart: istiod
-    targetRevision: 1.22.0
     helm:
       parameters:
         - name: global.istioNamespace
