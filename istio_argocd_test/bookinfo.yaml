@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/istio/istio
-    path: samples/bookinfo/platform/kube
-    targetRevision: 1.22.0
+    repoURL: https://github.com/ghitalazar/argocd_test.git
+    path: istio_argocd_test/bookinfo/platform/kube
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: bookinfo
