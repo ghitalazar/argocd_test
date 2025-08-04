@@ -283,11 +283,9 @@ metadata:
     app: productpage
     service: productpage
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 9080
     name: http
-    targetPort: 9080
   selector:
     app: productpage
 ---
