@@ -37,11 +37,9 @@ metadata:
     app: details
     service: details
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 9080
     name: http
-    targetPort: 9080
   selector:
     app: details
 ---
@@ -90,11 +88,9 @@ metadata:
     app: ratings
     service: ratings
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 9080
     name: http
-    targetPort: 9080
   selector:
     app: ratings
 ---
@@ -143,11 +139,9 @@ metadata:
     app: reviews
     service: reviews
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 9080
     name: http
-    targetPort: 9080
   selector:
     app: reviews
 ---
