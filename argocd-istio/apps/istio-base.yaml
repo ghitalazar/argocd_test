@@ -19,3 +19,8 @@ spec:
       selfHeal: true
       prune: true
 
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: istio-system
