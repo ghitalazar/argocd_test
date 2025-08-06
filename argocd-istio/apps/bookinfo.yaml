@@ -9,11 +9,11 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/istio/istio
-    path: samples/bookinfo/platform/kube
-    targetRevision: release-1.22
+    repoURL: https://github.com/ghitalazar/argocd_test.git
+    path: bookinfo/platform/kube
+    targetRevision: main
     directory:
-      recurse: true
+      recurse: false
   syncPolicy:
     automated:
       selfHeal: true
