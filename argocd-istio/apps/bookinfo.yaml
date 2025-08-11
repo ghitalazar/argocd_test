@@ -13,7 +13,7 @@ spec:
     path: bookinfo/platform/kube
     targetRevision: main
     directory:
-      recurse: false
+      recurse: true
   syncPolicy:
     automated:
       selfHeal: true
